@@ -1,24 +1,22 @@
 import { FunctionComponent } from 'react';
 import { ListItem } from '~components/atoms/list-item';
-import { IBase, IMessages } from '~types';
+import { IBase, IMessageTransformed } from '~types';
 
-export interface IMessageList extends IBase, IMessages {
+export interface IMessageList extends IBase {
+  messages: IMessageTransformed
   showAmount?: number;
 }
 
 // @ts-ignore - weird children error when children not specified
 export const MessageList: FunctionComponent<IMessageList> = ({
   messages,
-  showAmount= 10,
   className,
 }) => {
 
-  const truncatedMessages = messages.slice(0, showAmount);
-
   return (
     <div className={className}>
-      {Array.isArray(truncatedMessages) &&
-      truncatedMessages.map((item) => {
+      {Array.isArray(messages) &&
+        messages.map((item) => {
           const { id, username, message } = item;
           return (
             <ListItem

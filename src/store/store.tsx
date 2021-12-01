@@ -1,23 +1,16 @@
 import { Action, configureStore, ThunkAction } from '@reduxjs/toolkit';
-import { loadState } from '~lib/func/local-storage';
-import {
-  createStateSyncMiddleware,
-  initMessageListener,
-} from 'redux-state-sync';
-import { messagesReducer } from '~store/messages';
+import { setupListeners } from '@reduxjs/toolkit/query'
+import { messagesApi } from '~store/messages/message.service';
 
 export const store = configureStore({
   reducer: {
-    messages: messagesReducer,
+    [messagesApi.reducerPath]: messagesApi.reducer
   },
-  preloadedState: loadState('messages'),
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({
-      serializableCheck: false,
-    }).concat(createStateSyncMiddleware()),
+    getDefaultMiddleware().concat(messagesApi.middleware),
 });
 
-initMessageListener(store);
+setupListeners(store.dispatch)
 
 export type AppDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof store.getState>;

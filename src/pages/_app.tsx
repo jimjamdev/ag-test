@@ -7,11 +7,11 @@ import { store } from '~store/store';
 
 import '~styles/app.scss';
 
-store.subscribe(
+/*store.subscribe(
   debounce(() => {
-    return saveState('messages', store.getState());
+    return saveState('store', store.getState());
   }, 1000),
-);
+);*/
 
 function App({ Component, pageProps }: AppProps) {
   return (

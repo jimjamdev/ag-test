@@ -1,23 +1,29 @@
 import { SyntheticEvent } from 'react';
 import { MessageForm } from '~components/organisms/message-form';
-import { createMessage, useAppDispatch } from '~store';
+import { useCreateMessageMutation } from '~store';
 
 export const MessageFormContainer = () => {
 
-  const dispatch = useAppDispatch();
+  const [createMessage, { isLoading, error }] = useCreateMessageMutation()
 
-  const handleSubmit = (event: SyntheticEvent) => {
+  const handleSubmit = async(event: SyntheticEvent) => {
     event.preventDefault();
     const target = event.target as HTMLFormElement;
     const { username, message } = target;
 
-    dispatch(
-      createMessage({
-        username: username?.value,
-        message: message?.value,
-      }),
-    );
+    await createMessage(
+      {
+          username,
+          message
+      }
+    )
   };
+
+  if (isLoading) {
+    return 'Loading...'
+  }
+
+  console.log('error', error)
 
   return <MessageForm onSubmit={handleSubmit} />;
 };
