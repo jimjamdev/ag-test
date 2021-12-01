@@ -6,8 +6,8 @@
 npm i && npm run start
 
 # Desc
-So I went a path of SCSS modules for grid/layout and some static classes spit out globally, and a bunch of custom components. No third party UI library. Obviously didn't get everything I wanted completed.
-Now, i get the 6-8 hours if I had something ready, or an available stack. If it was my choice i'd just have went with apollo on nextjs. Solves a lot of these propblems.
+So I went a path of SCSS modules for grid/layout and some static classes spit out globally, and a bunch of custom components. Not too much in sass here.
+Now, i get the 6-8 hours if I had something ready, or an available stack. If it was my choice i'd just have went with apollo on nextjs. Solves a lot of these problems.
 
 So, there's a small local-1 test branch to look at. It's mostly static data in redux and some tests with state to localstorage.
 
