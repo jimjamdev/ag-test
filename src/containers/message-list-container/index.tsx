@@ -3,7 +3,7 @@ import { MessageList } from '~components/organisms/message-list';
 import { useGetMessagesQuery } from '~store/messages/message.service';
 import { IBase } from '~types';
 
-// @ts-ignore
+// @ts-ignore - yes, no children
 export const MessageListContainer:FunctionComponent<IBase> = ({
   className,
 }) => {

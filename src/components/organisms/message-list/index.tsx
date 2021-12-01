@@ -14,7 +14,7 @@ export const MessageList: FunctionComponent<IMessageList> = ({
 }) => {
 
   return (
-    <div className={className}>
+    <article className={className}>
       {Array.isArray(messages) &&
         messages.map((item) => {
           const { id, username, message } = item;
@@ -27,6 +27,6 @@ export const MessageList: FunctionComponent<IMessageList> = ({
             </ListItem>
           );
         })}
-    </div>
+    </article>
   );
 };
