@@ -7,7 +7,7 @@ Now, i get the 6-8 hours if I had something ready, or an available stack. If it 
 
 So, there's a small local-1 test branch to look at. It's mostly static data in redux and some tests with state to localstorage.
 
-You'll need the backend from https://github.com/jimmyjamieson/ag-server and npm i && npm run develop.
+For main branch, you'll need the backend from https://github.com/jimmyjamieson/ag-server and npm i && npm run develop.
 Backend is http://localhost:1337/admin/ 
 
 You might have to set up a new admin user as it's just using a local db to test. Try cogocreative@gmail.com and Password1 - as I saved the .tmp folder in the repo - naughty.
