@@ -1,0 +1,39 @@
+@import '../theme';
+
+@each $key, $value in $spacing {
+    //@debug "#{$key $value}";
+    .margin-#{'' + $key + ''} {
+        margin: $value
+    }
+    .margin-top-#{'' + $key + ''} {
+        margin-top: $value
+    }
+    .margin-bottom-#{'' + $key + ''} {
+        margin-bottom: $value
+    }
+    .margin-left-#{'' + $key + ''} {
+        margin-left: $value
+    }
+    .margin-right-#{'' + $key + ''} {
+        margin-right: $value
+    }
+}
+
+@each $key, $value in $spacing {
+    //@debug "#{$key $value}";
+    .padding-#{'' + $key + ''} {
+        padding: $value
+    }
+    .padding-top-#{'' + $key + ''} {
+        padding-top: $value
+    }
+    .padding-bottom-#{'' + $key + ''} {
+        padding-bottom: $value
+    }
+    .padding-left-#{'' + $key + ''} {
+        padding-left: $value
+    }
+    .padding-right-#{'' + $key + ''} {
+        padding-right: $value
+    }
+}

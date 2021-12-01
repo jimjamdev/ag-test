@@ -1,0 +1,5 @@
+
+@function color($color, $variant) {
+  // @debug $color $variant;
+  @return map-deep-get($palettes, $color, $variant);
+}

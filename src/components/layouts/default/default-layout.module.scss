@@ -1,0 +1,21 @@
+.root {
+  position: relative;
+  display: grid;
+  min-height: 100vh;
+  grid-template-areas: "header"
+                        "content"
+                        "footer";
+  grid-template-rows: auto 1fr auto;
+}
+
+.templateHeader {
+  grid-area: header;
+}
+
+.templateContent {
+  grid-area: content;
+}
+
+.templateFooter {
+  grid-area: footer;
+}

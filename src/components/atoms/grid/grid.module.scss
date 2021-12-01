@@ -1,0 +1,252 @@
+@import "../../../styles/theme";
+
+
+.root {
+  display: grid;
+}
+
+// Mobile/Base Cols
+
+.cols1 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.cols2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.cols3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.cols4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.cols5 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.cols6 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.cols7 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.cols8 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.cols9 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.cols10 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.cols11 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.cols12 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+// md columns
+
+.mdCols1 {
+  @include mq(md) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.mdCols2 {
+  @include mq(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.mdCols3 {
+  @include mq(md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.mdCols4 {
+  @include mq(md) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.mdCols5 {
+  @include mq(md) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.mdCols6 {
+  @include mq(md) {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.mdCols7 {
+  @include mq(md) {
+    grid-template-columns: repeat(7, 1fr);
+  }
+}
+
+.mdCols8 {
+  @include mq(md) {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+.mdCols9 {
+  @include mq(md) {
+    grid-template-columns: repeat(9, 1fr);
+  }
+}
+
+.mdCols10 {
+  @include mq(md) {
+    grid-template-columns: repeat(10, 1fr);
+  }
+}
+
+.mdCols11 {
+  @include mq(md) {
+    grid-template-columns: repeat(11, 1fr);
+  }
+}
+
+.mdCols12 {
+  @include mq(md) {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+
+// Desktop cols
+.desktopCols1 {
+  @include mq(lg) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.desktopCols2 {
+  @include mq(lg) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.desktopCols3 {
+  @include mq(lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.desktopCols4 {
+  @include mq(lg) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.desktopCols5 {
+  @include mq(lg) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.desktopCols6 {
+  @include mq(lg) {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.desktopCols7 {
+  @include mq(lg) {
+    grid-template-columns: repeat(7, 1fr);
+  }
+}
+
+.desktopCols8 {
+  @include mq(lg) {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+.desktopCols9 {
+  @include mq(lg) {
+    grid-template-columns: repeat(9, 1fr);
+  }
+}
+
+.desktopCols10 {
+  @include mq(lg) {
+    grid-template-columns: repeat(10, 1fr);
+  }
+}
+
+.desktopCols11 {
+  @include mq(lg) {
+    grid-template-columns: repeat(11, 1fr);
+  }
+}
+
+.desktopCols12 {
+  @include mq(lg) {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+
+// Spacing
+.spacing1 {
+  grid-gap: 0.5rem;
+}
+
+.spacing2 {
+  grid-gap: 1rem;
+}
+
+.spacing3 {
+  grid-gap: 1.5rem;
+}
+
+.mdSpacing1 {
+  @include mq(md) {
+    grid-gap: 0.5rem;
+  }
+}
+
+.mdSpacing2 {
+  @include mq(md) {
+    grid-gap: 1rem;
+  }
+}
+
+.mdSpacing3 {
+  @include mq(md) {
+    grid-gap: 1.5rem;
+  }
+}
+
+.desktopSpacing1 {
+  @include mq(lg) {
+    grid-gap: 0.5rem;
+  }
+}
+
+.desktopSpacing2 {
+  @include mq(lg) {
+    grid-gap: 1rem;
+  }
+}
+
+.desktopSpacing3 {
+  @include mq(lg) {
+    grid-gap: 1.5rem;
+  }
+}

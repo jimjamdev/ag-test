@@ -1,0 +1,10 @@
+@function map-deep-get($map, $keys...) {
+  $scope: $map; $i: 1;
+  // @debug $scope;
+  @while (type-of($scope) == map) and ($i <= length($keys)) {
+    @debug map-get($scope, nth($keys, $i));
+    $scope: map-get($scope, nth($keys, $i));
+    $i: $i + 1;
+  }
+  @return $scope;
+}

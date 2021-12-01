@@ -1,0 +1,23 @@
+@import 'theme'; // Base project theme, you can over-ride defaults here
+
+@import './globals'; // styles that are spit out globally
+
+@import 'functions';
+@import 'mixins';
+@import './components/button';
+@import './components/input';
+@import './components/card';
+@import './components/list';
+@import './components/container';
+
+html,body {
+  margin: 0;
+  padding: 0;
+  color: #000000;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+}
+
+*,*:before,*:after {
+  box-sizing: border-box;
+}

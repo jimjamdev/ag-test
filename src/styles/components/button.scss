@@ -1,0 +1,21 @@
+button.btn {
+  background: #c6002b;
+  padding: 0.35rem 0.65rem;
+  border: 0 none;
+  outline: none;
+  min-width: 80px;
+  border-radius: 0.45rem;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 13px;
+  &:hover {
+    background: lighten(#c6002b, 10)
+  }
+  &:active {
+    background: lighten(#c6002b, 5)
+  }
+  &:focus {
+    background: lighten(#c6002b, 7)
+  }
+}

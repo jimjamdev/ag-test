@@ -1,0 +1,19 @@
+@import '../theme';
+
+@each $color, $palette in $palettes {
+  @each $key, $value in $palette {
+    // @debug "#{$color $key $value}";
+    .color-#{'' + $color + ''}-#{'' + $key + ''} {
+      color: $value
+    }
+  }
+}
+
+@each $color, $palette in $palettes {
+  @each $key, $value in $palette {
+    // @debug "#{$color $key $value}";
+    .bg-#{'' + $color + ''}-#{'' + $key + ''} {
+      background-color: $value
+    }
+  }
+}
