@@ -11,7 +11,6 @@ export interface ITextArea extends IBase {
 }
 
 export const TextArea: FunctionComponent<ITextArea> = ({
-  id,
   name,
   onChange,
   className,
@@ -23,7 +22,7 @@ export const TextArea: FunctionComponent<ITextArea> = ({
   return (
     <textarea
       name={name}
-      id={id || name}
+      id={name}
       onChange={onChange}
       placeholder={placeholder}
       defaultValue={defaultValue}

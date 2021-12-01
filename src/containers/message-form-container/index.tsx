@@ -1,10 +1,10 @@
 import { SyntheticEvent } from 'react';
 import { MessageForm } from '~components/organisms/message-form';
-import { useCreateMessageMutation } from '~store';
+import { useCreateMessageMutation } from '~store/messages/message.service';
 
 export const MessageFormContainer = () => {
 
-  const [createMessage, { isLoading, error }] = useCreateMessageMutation()
+  const [createMessage, { isLoading }] = useCreateMessageMutation()
 
   const handleSubmit = async(event: SyntheticEvent) => {
     event.preventDefault();
@@ -13,17 +13,15 @@ export const MessageFormContainer = () => {
 
     await createMessage(
       {
-          username,
-          message
+          username: username?.value,
+          message: message?.value
       }
     )
   };
 
   if (isLoading) {
-    return 'Loading...'
+    return <div>Loading...</div>
   }
-
-  console.log('error', error)
 
   return <MessageForm onSubmit={handleSubmit} />;
 };

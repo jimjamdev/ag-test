@@ -11,7 +11,6 @@ export interface IInput extends IBase {
 }
 
 export const Input: FunctionComponent<IInput> = ({
-  id,
   name,
   onChange,
   className,
@@ -23,7 +22,7 @@ export const Input: FunctionComponent<IInput> = ({
   return (
     <input
       name={name}
-      id={id || name}
+      id={name}
       onChange={onChange}
       placeholder={placeholder}
       defaultValue={defaultValue}

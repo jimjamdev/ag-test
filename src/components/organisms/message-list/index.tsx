@@ -1,9 +1,9 @@
 import { FunctionComponent } from 'react';
 import { ListItem } from '~components/atoms/list-item';
-import { IBase, IMessageTransformed } from '~types';
+import { IBase, IMessage } from '~types';
 
 export interface IMessageList extends IBase {
-  messages: IMessageTransformed
+  messages: Array<IMessage>
   showAmount?: number;
 }
 

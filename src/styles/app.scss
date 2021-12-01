@@ -1,9 +1,9 @@
 @import 'theme'; // Base project theme, you can over-ride defaults here
+@import 'functions';
+@import 'mixins';
 
 @import './globals'; // styles that are spit out globally
 
-@import 'functions';
-@import 'mixins';
 @import './components/button';
 @import './components/input';
 @import './components/card';

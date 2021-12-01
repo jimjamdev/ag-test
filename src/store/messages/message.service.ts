@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { IMessages, IMessage, IMessageCreate } from '~types';
+import { IMessagesResponse, IMessage } from '~types';
 
 // Define a service using a base URL and expected endpoints
 export const messagesApi = createApi({
@@ -7,19 +7,21 @@ export const messagesApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:1337/api/' }),
   tagTypes: ['Message'],
   endpoints: (build) => ({
-    getMessages: build.query<IMessages, any>({
-      query: () => `messages`,
+    getMessages: build.query<IMessagesResponse, any>({
+      query: () => `messages?sort=id:desc&pagination[pageSize]=10`,
       providesTags: ['Message']
     }),
-    createMessage: build.mutation<IMessage, Omit<IMessageCreate, 'id'>>({
-      query: (body) => ({
+    createMessage: build.mutation<IMessage, Omit<IMessage, 'id'>>({
+      query: (data) => ({
         url: 'messages',
         method: 'POST',
-        body: { data: body },
+        body: { data },
       }),
       invalidatesTags: ['Message']
     }),
   }),
+  refetchOnFocus: true,
+  refetchOnReconnect: true
 })
 
 // Export hooks for usage in functional components, which are

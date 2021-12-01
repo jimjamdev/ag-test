@@ -1,13 +1,16 @@
 import { FunctionComponent } from 'react';
 import { MessageList } from '~components/organisms/message-list';
-import { useGetMessagesQuery } from '~store';
+import { useGetMessagesQuery } from '~store/messages/message.service';
 import { IBase } from '~types';
 
 // @ts-ignore
 export const MessageListContainer:FunctionComponent<IBase> = ({
   className,
 }) => {
-  const { data, error, isLoading } = useGetMessagesQuery({
+  /*
+    Fetch our data from RTX Query
+   */
+  const { data, isLoading } = useGetMessagesQuery({
     pollingInterval: 1000,
   })
 
@@ -20,15 +23,12 @@ export const MessageListContainer:FunctionComponent<IBase> = ({
     }
   })
 
-  if(error) {
-    return error
-  }
-
   if (isLoading) {
     return '...Loading'
   }
 
   return (
+    // @ts-ignore
     <MessageList className={className} messages={messages} />
   );
 };

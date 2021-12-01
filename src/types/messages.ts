@@ -1,11 +1,11 @@
-export interface IMessageTransformed {
+export interface IMessage {
   id: string | number;
   username: string;
   message: string;
 }
 
-export interface IMessage {
-  id?: string | number;
+export interface IMessageResponse {
+  id: string | number;
   attributes: {
     username: string;
     message: string;
@@ -14,8 +14,8 @@ export interface IMessage {
   }
 }
 
-export interface IMessages {
-  data: Array<IMessage>;
+export interface IMessagesResponse {
+  data: Array<IMessageResponse>;
   pagination: {
     page: number;
     pageCount:number;
