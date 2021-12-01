@@ -2,6 +2,10 @@
 
 ![wtf](https://c.tenor.com/P3071wk1eXcAAAAC/laughing-baby.gif)
 
+# To start
+npm i && npm run start
+
+# Desc
 So I went a path of SCSS modules for grid/layout and some static classes spit out globally, and a bunch of custom components. No third party UI library. Obviously didn't get everything I wanted completed.
 Now, i get the 6-8 hours if I had something ready, or an available stack. If it was my choice i'd just have went with apollo on nextjs. Solves a lot of these propblems.
 
