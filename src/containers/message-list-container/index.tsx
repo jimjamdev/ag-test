@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, useEffect, useState } from 'react';
 import { MessageList } from '~components/organisms/message-list';
 import { useGetMessagesQuery } from '~store/messages/message.service';
 import { IBase } from '~types';
@@ -10,11 +10,17 @@ export const MessageListContainer:FunctionComponent<IBase> = ({
   /*
     Fetch our data from RTX Query
    */
-  const { data, isLoading } = useGetMessagesQuery({
+  const { data, isLoading, error, isFetching } = useGetMessagesQuery({
     pollingInterval: 1000,
   })
 
-  const messages = data?.data.flatMap(m => {
+  console.log('data', data?.data)
+
+
+  /*
+  Transform data
+   */
+  const messages = data?.data && data?.data.map(m => {
     const { username, message } = m?.attributes;
     return {
       id: m?.id,
@@ -23,8 +29,13 @@ export const MessageListContainer:FunctionComponent<IBase> = ({
     }
   })
 
-  if (isLoading) {
-    return '...Loading'
+  if (error) {
+    // @ts-ignore - weird. it does exist
+    return <div>{error?.message}</div>
+  }
+
+  if (isLoading || isFetching) {
+    return <div>Loading...</div>
   }
 
   return (

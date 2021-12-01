@@ -4,7 +4,7 @@ import { useCreateMessageMutation } from '~store/messages/message.service';
 
 export const MessageFormContainer = () => {
 
-  const [createMessage, { isLoading }] = useCreateMessageMutation()
+  const [createMessage, { isLoading, error }] = useCreateMessageMutation()
 
   const handleSubmit = async(event: SyntheticEvent) => {
     event.preventDefault();
@@ -18,6 +18,11 @@ export const MessageFormContainer = () => {
       }
     )
   };
+
+  if (error) {
+    // @ts-ignore - yes, yo do
+    return <div>{error?.message}</div>
+  }
 
   if (isLoading) {
     return <div>Loading...</div>

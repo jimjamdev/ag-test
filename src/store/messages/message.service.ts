@@ -20,8 +20,6 @@ export const messagesApi = createApi({
       invalidatesTags: ['Message']
     }),
   }),
-  refetchOnFocus: true,
-  refetchOnReconnect: true
 })
 
 // Export hooks for usage in functional components, which are
