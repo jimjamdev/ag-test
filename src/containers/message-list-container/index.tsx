@@ -10,12 +10,9 @@ export const MessageListContainer:FunctionComponent<IBase> = ({
   /*
     Fetch our data from RTX Query
    */
-  const { data, isLoading, error, isFetching } = useGetMessagesQuery({},
+  const { data, isLoading, error } = useGetMessagesQuery({},
     { pollingInterval: 1000 }
   )
-
-  console.log('data', data?.data)
-
 
   /*
   Transform data
