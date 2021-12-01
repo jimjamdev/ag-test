@@ -1,4 +1,4 @@
-import { FunctionComponent, useEffect, useState } from 'react';
+import { FunctionComponent } from 'react';
 import { MessageList } from '~components/organisms/message-list';
 import { useGetMessagesQuery } from '~store/messages/message.service';
 import { IBase } from '~types';
@@ -10,9 +10,9 @@ export const MessageListContainer:FunctionComponent<IBase> = ({
   /*
     Fetch our data from RTX Query
    */
-  const { data, isLoading, error, isFetching } = useGetMessagesQuery({
-    pollingInterval: 1000,
-  })
+  const { data, isLoading, error, isFetching } = useGetMessagesQuery({},
+    { pollingInterval: 1000 }
+  )
 
   console.log('data', data?.data)
 
@@ -34,7 +34,7 @@ export const MessageListContainer:FunctionComponent<IBase> = ({
     return <div>{error?.message}</div>
   }
 
-  if (isLoading || isFetching) {
+  if (isLoading) {
     return <div>Loading...</div>
   }
 

@@ -8,7 +8,7 @@ export const messagesApi = createApi({
   tagTypes: ['Message'],
   endpoints: (build) => ({
     getMessages: build.query<IMessagesResponse, any>({
-      query: () => `messages?sort=id:desc&pagination[pageSize]=10`,
+      query: () => 'messages?sort=id:desc&pagination[pageSize]=10',
       providesTags: ['Message']
     }),
     createMessage: build.mutation<IMessage, Omit<IMessage, 'id'>>({
