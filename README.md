@@ -15,6 +15,8 @@ You might have to set up a new admin user as it's just using a local db to test.
 # Notes
 Never got the socket thing running for backend, but using quite a clean setup with RKT Query with polling, so you get updates across tabs. The local-1 version uses localstorage and a sync plugin if you're interested.
 
+Take a look at another test to see one with a bit more components and sass https://github.com/jimmyjamieson/carma-movies
+
 # SetUp
 - Nextjs
 - Typescript
